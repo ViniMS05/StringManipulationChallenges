@@ -40,3 +40,30 @@ const removeDuplicatedCharacters = (text: string) => {
 
   return unduplicatedCharactersString;
 };
+
+const isPalindromeAnagram = (word: string) => {
+  const revesedWord = word.trim().split("").reverse().join("");
+
+  if (word === revesedWord) {
+    return true;
+  }
+  return false;
+};
+
+function longestPalindromeSubstring(text: string) {
+  let longestPalindrome = "";
+
+  for (let startIndex = 0; startIndex < text.length; startIndex++) {
+    for (let endIndex = startIndex + 1; endIndex <= text.length; endIndex++) {
+      let substring = text.substring(startIndex, endIndex);
+      if (
+        isPalindromeAnagram(substring) &&
+        substring.length > longestPalindrome.length
+      ) {
+        longestPalindrome = substring;
+      }
+    }
+  }
+
+  return longestPalindrome;
+}
