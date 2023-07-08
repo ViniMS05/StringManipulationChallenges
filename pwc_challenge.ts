@@ -67,3 +67,32 @@ function longestPalindromeSubstring(text: string) {
 
   return longestPalindrome;
 }
+
+const capitalizePhrases = (text: string) => {
+  const phrasesArray = text.trim().split(separators);
+
+  const sentences = text.match(separators)!;
+
+  let capitalizedPhrasesArray: string[] = [];
+  phrasesArray.forEach((item, idx) => {
+    if (!item) {
+      phrasesArray.splice(idx, 1);
+      return;
+    }
+
+    const charsArray = item.trim().split("");
+    charsArray.forEach((char, indx) => {
+      if (indx === 0) {
+        charsArray[indx] = char.toUpperCase();
+      }
+    });
+    charsArray.push(sentences[idx]);
+
+    const capitalizedPhrase = charsArray.join("");
+    capitalizedPhrasesArray.push(capitalizedPhrase);
+  });
+
+  const capitalizedText = capitalizedPhrasesArray.join(" ");
+
+  return capitalizedText;
+};
