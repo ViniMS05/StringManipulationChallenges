@@ -24,3 +24,19 @@ const revertPhrasesOrder = (text: string) => {
 
   return reversedTextOrder;
 };
+
+const removeDuplicatedCharacters = (text: string) => {
+  const charArr = text.trim().split("");
+
+  const unduplicatedCharactersArray: any[] = [];
+
+  charArr.forEach((char) => {
+    if (!unduplicatedCharactersArray.includes(char) || char === " ") {
+      unduplicatedCharactersArray.push(char);
+    }
+  });
+
+  const unduplicatedCharactersString = unduplicatedCharactersArray.join("");
+
+  return unduplicatedCharactersString;
+};
