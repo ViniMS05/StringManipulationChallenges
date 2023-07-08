@@ -76,3 +76,9 @@ button {
 button:hover {
   filter: brightness(120%);
 }
+
+@media (max-width: 768px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+}
