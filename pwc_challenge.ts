@@ -96,3 +96,78 @@ const capitalizePhrases = (text: string) => {
 
   return capitalizedText;
 };
+
+function reversedPhraseOrderSubmit(event: FormDataEvent) {
+  event.preventDefault();
+
+  const form = document.getElementById("first") as HTMLFormElement;
+  const result = document.getElementById("firstResult") as HTMLHeadingElement;
+
+  const formData = new FormData(form);
+
+  const inputData = formData.get("word_order") as string;
+
+  const reversedPhrase = revertPhrasesOrder(inputData);
+
+  result.textContent = `Resultado: ${reversedPhrase}`;
+}
+
+function removeDuplicatedCharactersSubmit(event: FormDataEvent) {
+  event.preventDefault();
+
+  const form = document.getElementById("second") as HTMLFormElement;
+  const result = document.getElementById("secondResult") as HTMLHeadingElement;
+
+  const formData = new FormData(form);
+
+  const inputData = formData.get("duplicated_chars") as string;
+
+  const removedDuplicateds = removeDuplicatedCharacters(inputData);
+
+  result.textContent = `Resultado: ${removedDuplicateds}`;
+}
+
+function longestPalindromeSubstringSubmit(event: FormDataEvent) {
+  event.preventDefault();
+
+  const form = document.getElementById("third") as HTMLFormElement;
+  const result = document.getElementById("thirdResult") as HTMLHeadingElement;
+
+  const formData = new FormData(form);
+
+  const inputData = formData.get("palindrome_substring") as string;
+
+  const longestPalindrome = longestPalindromeSubstring(inputData);
+
+  result.textContent = `Resultado: ${longestPalindrome}`;
+}
+
+function capitalizePhrasesSubmit(event: FormDataEvent) {
+  event.preventDefault();
+
+  const form = document.getElementById("fourth") as HTMLFormElement;
+  const result = document.getElementById("fourthResult") as HTMLHeadingElement;
+
+  const formData = new FormData(form);
+
+  const inputData = formData.get("capitalize") as string;
+
+  const capitalizedPhrase = capitalizePhrases(inputData);
+
+  result.textContent = `Resultado: ${capitalizedPhrase}`;
+}
+
+function isPalindromeAnagramSubmit(event: FormDataEvent) {
+  event.preventDefault();
+
+  const form = document.getElementById("fifth") as HTMLFormElement;
+  const result = document.getElementById("fifthResult") as HTMLHeadingElement;
+
+  const formData = new FormData(form);
+
+  const inputData = formData.get("palindrome_anagram") as string;
+
+  const isPalindrome = isPalindromeAnagram(inputData);
+
+  result.textContent = `Resultado: ${isPalindrome}`;
+}

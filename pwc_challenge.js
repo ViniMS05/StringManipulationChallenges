@@ -69,3 +69,48 @@ var capitalizePhrases = function (text) {
     var capitalizedText = capitalizedPhrasesArray.join(" ");
     return capitalizedText;
 };
+function reversedPhraseOrderSubmit(event) {
+    event.preventDefault();
+    var form = document.getElementById("first");
+    var result = document.getElementById("firstResult");
+    var formData = new FormData(form);
+    var inputData = formData.get("word_order");
+    var reversedPhrase = revertPhrasesOrder(inputData);
+    result.textContent = "Resultado: ".concat(reversedPhrase);
+}
+function removeDuplicatedCharactersSubmit(event) {
+    event.preventDefault();
+    var form = document.getElementById("second");
+    var result = document.getElementById("secondResult");
+    var formData = new FormData(form);
+    var inputData = formData.get("duplicated_chars");
+    var removedDuplicateds = removeDuplicatedCharacters(inputData);
+    result.textContent = "Resultado: ".concat(removedDuplicateds);
+}
+function longestPalindromeSubstringSubmit(event) {
+    event.preventDefault();
+    var form = document.getElementById("third");
+    var result = document.getElementById("thirdResult");
+    var formData = new FormData(form);
+    var inputData = formData.get("palindrome_substring");
+    var longestPalindrome = longestPalindromeSubstring(inputData);
+    result.textContent = "Resultado: ".concat(longestPalindrome);
+}
+function capitalizePhrasesSubmit(event) {
+    event.preventDefault();
+    var form = document.getElementById("fourth");
+    var result = document.getElementById("fourthResult");
+    var formData = new FormData(form);
+    var inputData = formData.get("capitalize");
+    var capitalizedPhrase = capitalizePhrases(inputData);
+    result.textContent = "Resultado: ".concat(capitalizedPhrase);
+}
+function isPalindromeAnagramSubmit(event) {
+    event.preventDefault();
+    var form = document.getElementById("fifth");
+    var result = document.getElementById("fifthResult");
+    var formData = new FormData(form);
+    var inputData = formData.get("palindrome_anagram");
+    var isPalindrome = isPalindromeAnagram(inputData);
+    result.textContent = "Resultado: ".concat(isPalindrome);
+}
