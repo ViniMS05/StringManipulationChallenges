@@ -93,7 +93,7 @@ function longestPalindromeSubstringSubmit(event) {
     var result = document.getElementById("thirdResult");
     var formData = new FormData(form);
     var inputData = formData.get("palindrome_substring");
-    var longestPalindrome = longestPalindromeSubstring(inputData);
+    var longestPalindrome = longestPalindromeSubstring(inputData.toLowerCase());
     result.textContent = "Resultado: ".concat(longestPalindrome);
 }
 function capitalizePhrasesSubmit(event) {
@@ -111,6 +111,6 @@ function isPalindromeAnagramSubmit(event) {
     var result = document.getElementById("fifthResult");
     var formData = new FormData(form);
     var inputData = formData.get("palindrome_anagram");
-    var isPalindrome = isPalindromeAnagram(inputData);
+    var isPalindrome = isPalindromeAnagram(inputData.toLowerCase());
     result.textContent = "Resultado: ".concat(isPalindrome);
 }

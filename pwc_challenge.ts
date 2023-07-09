@@ -137,7 +137,7 @@ function longestPalindromeSubstringSubmit(event: FormDataEvent) {
 
   const inputData = formData.get("palindrome_substring") as string;
 
-  const longestPalindrome = longestPalindromeSubstring(inputData);
+  const longestPalindrome = longestPalindromeSubstring(inputData.toLowerCase());
 
   result.textContent = `Resultado: ${longestPalindrome}`;
 }
@@ -167,7 +167,7 @@ function isPalindromeAnagramSubmit(event: FormDataEvent) {
 
   const inputData = formData.get("palindrome_anagram") as string;
 
-  const isPalindrome = isPalindromeAnagram(inputData);
+  const isPalindrome = isPalindromeAnagram(inputData.toLowerCase());
 
   result.textContent = `Resultado: ${isPalindrome}`;
 }
